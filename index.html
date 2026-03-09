@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>💕 Untuk Kamu Sayang 💕</title>
+
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+
+<!-- Canvas Confetti CDN -->
+<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.2/dist/confetti.browser.min.js"></script>
+
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- Floating hearts background -->
+<div class="hearts-bg" id="heartsBg"></div>
+
+<!-- Mute Button -->
+<button id="muteBtn" title="Mute/Unmute">🔊</button>
+
+<!-- Background music -->
+<audio id="bgMusic" loop>
+  <source src="https://www.soundjay.com/misc/sounds/bell-ringing-05.mp3" type="audio/mpeg">
+</audio>
+
+<!-- Toast notification -->
+<div id="toast">📋 Link disalin!</div>
+
+<!-- ============================
+     SLIDE 1
+============================= -->
+<div class="slide slide-1 active" id="slide-1">
+  <div class="rising-hearts" id="risingHeartsS1"></div>
+  <div class="card">
+    <div class="slide-title">Aku cinta banget sama kamu! 😍💕<br>Kamu mau jadi pacarku gak?</div>
+
+    <div id="responseYay" class="response-text">YAY! Kita resmi pacaran! 🥰🎉</div>
+    <div id="responseShy" class="response-text">Eh, kok ilang? Pasti malu-malu kucing! 😜</div>
+
+    <div class="btn-group" id="btnGroup">
+      <button class="btn-accept" id="btnAccept" onclick="handleAccept()">TERIMA ❤️</button>
+      <button class="btn-decline" id="btnDecline" onclick="handleDecline()">TIDAK 😔</button>
+    </div>
+  </div>
+</div>
+
+<!-- ============================
+     SLIDE 2
+============================= -->
+<div class="slide slide-2" id="slide-2">
+  <div class="rising-hearts" id="risingHeartsS2"></div>
+  <div class="card">
+    <div class="icecream-anim">🍦</div>
+    <div class="slide-title">Kamu manis kayak es krim,<br>aku mau lelehin kamu setiap hari! 😘</div>
+    <div style="font-size:2.5rem; margin-top:0.5rem; animation: heartbeat 1.5s infinite;">💗💗💗</div>
+  </div>
+</div>
+
+<!-- ============================
+     SLIDE 3
+============================= -->
+<div class="slide slide-3" id="slide-3">
+  <div class="rising-hearts" id="risingHeartsS3"></div>
+  <div class="card">
+    <div class="emoji-display">🎢</div>
+    <div class="slide-title">Tiap liat kamu, hatiku kayak lagi naik roller coaster! 💓</div>
+    <div style="font-size:2rem; animation: bounceIn 0.5s ease 0.3s both; margin-top:0.5rem;">💓🌀💓🌀💓</div>
+  </div>
+</div>
+
+<!-- ============================
+     SLIDE 4
+============================= -->
+<div class="slide slide-4" id="slide-4">
+  <div class="rising-hearts" id="risingHeartsS4"></div>
+  <div class="card">
+    <div class="sparkles">✨🔍✨</div>
+    <div class="emoji-display zoom-text" id="searchEmoji">🔍❤️</div>
+    <div class="slide-title zoom-text" id="slide4Text">Kamu bukan Google, tapi kamu punya<br>everything I've been searching for! ❤️</div>
+    <div style="font-size:1.5rem; margin-top:0.8rem; animation: sparkle 1s ease infinite alternate;">✨💖✨💖✨</div>
+  </div>
+</div>
+
+<!-- ============================
+     SLIDE 5 (FINAL)
+============================= -->
+<div class="slide slide-5" id="slide-5">
+  <div class="rising-hearts" id="risingHeartsS5"></div>
+  <div class="card">
+    <div class="final-emoji">💑</div>
+    <div class="slide-title">Makasih udah buka hatimu buat aku!<br>Love you forever! 💖🥰</div>
+    <div style="font-size:2rem; margin: 0.5rem 0; animation: sparkle 1.2s infinite alternate;">🌟💕🌟💕🌟</div>
+    <div class="action-btns">
+      <button class="btn-share" onclick="shareCard()">💚 Call me darling<3</button>
+      <button class="btn-restart" onclick="restartCard()">🔄 Ulang dari Awal</button>
+    </div>
+  </div>
+</div>
+
+<!-- Next Button -->
+<button class="btn-next" id="btnNext" onclick="nextSlide()">Selanjutnya ➜</button>
+
+<!-- Dot navigation -->
+<div class="dot-nav" id="dotNav">
+  <div class="dot active" onclick="goSlide(0)"></div>
+  <div class="dot" onclick="goSlide(1)"></div>
+  <div class="dot" onclick="goSlide(2)"></div>
+  <div class="dot" onclick="goSlide(3)"></div>
+  <div class="dot" onclick="goSlide(4)"></div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
